@@ -1,0 +1,49 @@
+/*things i learned in the video
+1. do watch sass and it will turn everything into css
+2. create variables with $variable_name so that now everything you want in this variable can be easily found, change everything w tht variable
+3. you can literally do header{
+                           button{
+                           }
+                        } which is take care of all the little components in the big section, have all the things you need in one area
+4. you can take parts out of scss into a new file by doing _name.scss, so you can work on it individually
+        in the original scss file you have to: @import "./name"
+5. @mixin name(){
+    display center: center;
+    justify-content: center;
+    align-items: center;
+    }
+    this allows that everything you want like that to be the properties you put in
+    to do it you have to do @include name()
+
+6. @mixin name($direction, $background){ 
+display center: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+    }
+
+    and you want to use the @mixin in lets say, your header:
+    header{
+        @include name(column, red);
+        background:blue;
+        height: 100vh
+        color: $textcolor;
+        }
+    inside the parenthesis you can change the variable you want in the things you want the same
+7. if you have a bunch of style, lets say under "header", and you want that at somewhere else just do:
+    @extend header;
+    
+    it inherets everything that the original styles had
+
+    if you want to override any styles you just write below it, heres an ex:
+    .contact {
+        @extend header;
+        background: black;
+    }
+8. you can do calculations with +, - , /, *, heres an ex:
+    .contact {
+        @extend header;
+        background: black;
+        width: 100%-20%
+     }

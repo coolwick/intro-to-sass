@@ -1,0 +1,64 @@
+$primaryBtn: blue header {
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+}
+
+header button {
+  background: red;
+  display: flex;
+  justify-content: center;
+  color: $primaryBtn;
+  button {
+    background: $primaryBtn;
+    &:hover {
+      background: red;
+    }
+    /* &::after{
+        content: "helloooooo";
+    }*/
+  }
+}
+
+.contact button {
+  background: red;
+}
+
+/* to move the styles in the style sheet bc its too long to another sheet, you can do _(name).scss 
+in style.scss just do @import ./"(name of the sheert)"
+like @import "./variables";
+
+@mixin flexCenter{
+    display center: center;
+    justify-content: center;
+    align-items: center;
+    }
+
+    ^^^ now you do @include flexCenter() it will have all those properties writtin in it.
+
+if you want one section to be different from the other, you add a variable with $  vv
+ @mixin flexCenter($direction, $background){
+    display center: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background: $background;
+    }
+
+    header{
+        @include flexCenter(column, red);
+
+        background: lightblue;
+        height:100vh;
+        color: $textColor;
+        button{
+            background: $primaryBtn;
+            &after::{
+                content: "hellooo"
+            }
+        }
+    }
+
+    .container{
+        @include flexCenter (row, blue)
+        }
